@@ -4,7 +4,7 @@ def merge(arrA, arrB):
     merged_arr = [0] * elements
 
     # Your code here
-
+    merge_sort(merged_arr)
 
     return merged_arr
 
@@ -12,6 +12,16 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # Your code here
 
+    pivot = arr[0]
+    left = []
+    right = []
+    for i in arr:
+        if i < pivot:
+            left.append(i)
+        else:
+            right.append(i)
+
+    merge(left, right)
 
     return arr
 
@@ -21,8 +31,10 @@ def merge_sort(arr):
 # or data structures; it can only re-use the memory it was given as input
 def merge_in_place(arr, start, mid, end):
     # Your code here
+    pass
 
 
 def merge_sort_in_place(arr, l, r):
     # Your code here
+    pass
 
