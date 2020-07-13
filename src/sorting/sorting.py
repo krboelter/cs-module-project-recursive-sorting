@@ -4,7 +4,8 @@ def merge(arrA, arrB):
     merged_arr = [0] * elements
 
     # Your code here
-    merge_sort(merged_arr)
+    
+    merged_arr = merge_sort(arrA) + merge_sort(arrB)
 
     return merged_arr
 
@@ -12,16 +13,22 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # Your code here
 
+    # if the array only has 1 element, return the array
+    if len(arr) <= 1:
+        return arr
+
     pivot = arr[0]
     left = []
     right = []
-    for i in arr:
-        if i < pivot:
-            left.append(i)
-        else:
-            right.append(i)
 
-    merge(left, right)
+    for i in arr[1:]:
+        if i > pivot:
+            right.append(i)
+        else:
+            left.append(i)
+
+    left.append(pivot)
+    arr = merge(left, right)
 
     return arr
 
